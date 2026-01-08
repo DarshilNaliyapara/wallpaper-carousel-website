@@ -1,5 +1,4 @@
 import { getWallpaperName, getRandomCropUrl } from "@/utils/utils";
-// 1. Updated SHAPES: Only Desktop Friendly (Wide & Square)
 
 export default function StaggeredGrid({ wallpapers }: { wallpapers: string[] }) {
   return (
@@ -25,7 +24,6 @@ export default function StaggeredGrid({ wallpapers }: { wallpapers: string[] }) 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               
-              {/* Overlay */}
               <div className="absolute inset-x-3 bottom-3 p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-lg">
                   <div className="flex items-center justify-between">
                     <h2 className="text-xs font-bold text-white uppercase tracking-wider truncate pr-2">{name}</h2>

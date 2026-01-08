@@ -6,30 +6,27 @@ export default function Terminal({ command }: { command: string }) {
   const [copied, setCopied] = useState(false);
 
 const handleCopy = async () => {
-    // 1. Try the modern API (Works on HTTPS / Localhost)
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(command);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
-        return; // Success, exit function
+        return;
       } catch (err) {
         console.warn("Clipboard API failed, trying fallback...", err);
       }
     }
 
-    // 2. Fallback for non-secure contexts (HTTP) or older browsers
     try {
       const textarea = document.createElement("textarea");
       textarea.value = command;
       
-      // Move it off-screen so user doesn't see it
       textarea.style.position = "fixed";
       textarea.style.left = "-9999px";
       
       document.body.appendChild(textarea);
       textarea.select();
-      document.execCommand("copy"); // The magic command
+      document.execCommand("copy");
       document.body.removeChild(textarea);
       
       setCopied(true);
@@ -41,7 +38,6 @@ const handleCopy = async () => {
 
   return (
     <div className="relative w-full max-w-2xl mx-auto mt-8">
-      {/* Container */}
       <div className="flex items-center bg-[#0F0F0F] border border-white/10 rounded-xl shadow-2xl overflow-hidden group hover:border-white/20 transition-colors">
         <div className="flex-1 overflow-x-auto py-4 pl-5 pr-16 scrollbar-thin scrollbar-thumb-white/10 no-scrollbar">
           <code className="font-mono text-sm md:text-base text-cyan-400 whitespace-nowrap">
@@ -50,7 +46,6 @@ const handleCopy = async () => {
           </code>
         </div>
 
-        {/* Copy Button Area - Now hidden until hover */}
         <div className="absolute right-2 top-1/2 -translate-y-1/2 pl-2 bg-gradient-to-l from-[#0F0F0F] via-[#0F0F0F] to-transparent transition-opacity duration-200 opacity-100 md:opacity-0 md:group-hover:opacity-100">   
         <button
             onClick={handleCopy}
@@ -58,12 +53,10 @@ const handleCopy = async () => {
             title="Copy to clipboard"
           >
             {copied ? (
-              // Checkmark Icon
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-400 scale-110">
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
             ) : (
-              // Copy Icon
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>

@@ -3,7 +3,6 @@ import Terminal from "./components/terminal";
 import { getWallpaperName, getOptimizedUrl } from "@/utils/utils";
 import Navbar from "./components/navbar";
 
-// --- 2. Interface ---
 interface ApiResponse {
   data: {
     wallpapers: string[];

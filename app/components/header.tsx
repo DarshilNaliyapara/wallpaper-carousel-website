@@ -11,12 +11,9 @@ export default function Header() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  
-  // Initialize from URL, but keep local state for instant feedback
   const paramCategory = searchParams.get("category") || "All";
   const [activeCategory, setActiveCategory] = useState(paramCategory);
 
-  // Sync local state if URL changes externally (e.g. browser back button)
   useEffect(() => {
     setActiveCategory(paramCategory);
   }, [paramCategory]);

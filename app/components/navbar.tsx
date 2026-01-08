@@ -9,7 +9,6 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Detect scroll to add solid background/shadow
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -38,17 +37,17 @@ export default function Navbar() {
       >
         <div className="max-w-[1800px] mx-auto px-6 flex items-center justify-between">
           
-          {/* 1. Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-white text-black flex items-center justify-center rounded-lg font-black text-xl tracking-tighter group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-              S
-            </div>
+          <img
+    src="/favicon.ico" /* <-- Make sure this matches your filename in the public folder (e.g., /favicon.ico) */
+    alt="ShilyScape Logo"
+    className="w-12 h-12 rounded-lg object-contain group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300"
+  />
             <span className="text-xl font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
               ShilyScape
             </span>
           </Link>
 
-          {/* 2. Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 bg-white/5 px-6 py-2 rounded-full border-b border-white/5 backdrop-blur-sm">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -62,7 +61,6 @@ export default function Navbar() {
                   `}
                 >
                   {link.name}
-                  {/* Glowing Dot for Active State */}
                   <span 
                     className={`
                       absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-cyan-400 shadow-[0_0_10px_cyan] transition-all duration-300
@@ -74,10 +72,7 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* 3. Right Actions (Search + Buttons) */}
           <div className="flex items-center gap-4">
-            
-            {/* Search Button (Visual Only) */}
             <button className="hidden md:flex items-center gap-2 px-4 py-2 bg-neutral-900/50 hover:bg-neutral-800 border border-white/10 rounded-full text-gray-400 hover:text-white transition-all group">
               <svg className="w-4 h-4 group-hover:text-cyan-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -86,7 +81,6 @@ export default function Navbar() {
               <kbd className="hidden lg:inline-block ml-2 px-1.5 py-0.5 text-[10px] font-mono bg-white/10 rounded text-gray-400">⌘K</kbd>
             </button>
 
-            {/* Mobile Menu Toggle */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 text-white/80 hover:text-white"
@@ -99,7 +93,6 @@ export default function Navbar() {
               </svg>
             </button>
             
-            {/* Profile / CTA */}
             <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 p-[1px] cursor-pointer hover:scale-105 transition-transform">
               <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
                  <span className="text-xs font-bold text-white">DB</span>
@@ -109,7 +102,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* 4. Mobile Menu Overlay */}
       <div 
         className={`
           fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl md:hidden transition-transform duration-500 cubic-bezier(0.32, 0.72, 0, 1)
