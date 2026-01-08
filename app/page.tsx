@@ -30,13 +30,13 @@ export default async function Home() {
     <main className="min-h-screen bg-[#050505] text-white selection:bg-cyan-500/30">
 
       <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden py-20">
-        <Navbar/>
+        <Navbar />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none" />
         <div className="z-10 text-center space-y-8 px-4 max-w-4xl mx-auto w-full">
 
           <div className="space-y-4">
             <h1 className="text-6xl md:text-8xl font-black tracking-tighter bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
-              AESTHETICS
+              ShilyScape
             </h1>
             <p className="text-gray-400 text-lg md:text-xl max-w-lg mx-auto">
               Automate your desktop background with our CLI tool.
@@ -56,9 +56,15 @@ export default async function Home() {
               className="group flex items-center gap-2 px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-cyan-400 transition-all duration-200 mx-auto w-fit shadow-lg shadow-white/5"
             >
               <span>See Recent Uploads</span>
-              <span className="group-hover:translate-y-1 transition-transform duration-300">
-                &darr;
-              </span>
+              <svg
+                className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" />
+              </svg>
             </a>
           </div>
         </div>
@@ -70,7 +76,7 @@ export default async function Home() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4">
           <div className="flex items-start gap-4">
             {/* Large Number Index */}
-            <span className="text-6xl font-black text-white/5 -mt-4 select-none">01</span>
+            <span className="text-6xl font-black text-white/40 -mt-4 select-none">01</span>
 
             <div>
               <h2 className="text-2xl font-bold text-white leading-none mb-2">
@@ -80,14 +86,6 @@ export default async function Home() {
                 Curated high-resolution wallpapers added to the collection today.
               </p>
             </div>
-          </div>
-
-          {/* Simple Counter with Line */}
-          <div className="flex items-center gap-4 text-right">
-            <div className="h-[1px] w-12 bg-white/20" />
-            <span className="text-sm font-mono text-gray-400">
-              Viewing <span className="text-white">4</span> of {wallpapers.length}
-            </span>
           </div>
         </div>
 
@@ -131,7 +129,15 @@ export default async function Home() {
             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative flex items-center gap-3 font-bold text-gray-300 group-hover:text-white">
               View Full Collection
-              <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+              <svg
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+              </svg>
             </span>
           </Link>
         </div>

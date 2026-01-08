@@ -43,7 +43,7 @@ const handleCopy = async () => {
     <div className="relative w-full max-w-2xl mx-auto mt-8">
       {/* Container */}
       <div className="flex items-center bg-[#0F0F0F] border border-white/10 rounded-xl shadow-2xl overflow-hidden group hover:border-white/20 transition-colors">
-        <div className="flex-1 overflow-x-auto py-4 pl-5 pr-16 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+        <div className="flex-1 overflow-x-auto py-4 pl-5 pr-16 scrollbar-thin scrollbar-thumb-white/10 no-scrollbar">
           <code className="font-mono text-sm md:text-base text-cyan-400 whitespace-nowrap">
             <span className="text-purple-400 mr-3 select-none">$</span>
             {command}

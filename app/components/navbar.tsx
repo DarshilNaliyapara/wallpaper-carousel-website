@@ -31,8 +31,8 @@ export default function Navbar() {
         className={`
           fixed top-0 left-0 right-0 z-[100] px-6 transition-all duration-300 ease-in-out border-b border-white/5
           ${isScrolled 
-            ? "bg-[#050505]/80 backdrop-blur-xl border-white/5 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.5)]" 
-            : "bg-transparent py-3"
+            ? "bg-[#050505]/80 backdrop-blur-xl border-white/5 py-4 shadow-[0_4px_30px_rgba(0,0,0,0.5)]" 
+            : "bg-transparent py-4"
           }
         `}
       >
@@ -41,10 +41,10 @@ export default function Navbar() {
           {/* 1. Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 bg-white text-black flex items-center justify-center rounded-lg font-black text-xl tracking-tighter group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-              A
+              S
             </div>
             <span className="text-xl font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
-              AESTHETICS
+              ShilyScape
             </span>
           </Link>
 
