@@ -51,8 +51,8 @@ const handleCopy = async () => {
         </div>
 
         {/* Copy Button Area - Now hidden until hover */}
-        <div className="absolute right-2 top-1/2 -translate-y-1/2 pl-2 bg-gradient-to-l from-[#0F0F0F] via-[#0F0F0F] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          <button
+        <div className="absolute right-2 top-1/2 -translate-y-1/2 pl-2 bg-gradient-to-l from-[#0F0F0F] via-[#0F0F0F] to-transparent transition-opacity duration-200 opacity-100 md:opacity-0 md:group-hover:opacity-100">   
+        <button
             onClick={handleCopy}
             className="p-2 rounded-lg hover:bg-white/10 transition-all duration-200 text-gray-400 hover:text-white"
             title="Copy to clipboard"

@@ -127,12 +127,6 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <button 
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="absolute top-8 right-8 p-2 text-white/50 hover:text-white"
-          >
-            Close
-          </button>
         </div>
       </div>
     </>
