@@ -23,7 +23,7 @@ export default async function WallpaperGrid({ category }: { category: string }) 
 
     if (wallpapers.length === 0) {
         return (
-            <div className="col-span-full flex flex-col items-center justify-center min-h-[50vh] text-center animate-in fade-in zoom-in duration-500">
+            <div className="col-span-full w-full h-[calc(100vh-150px)] flex flex-col items-center justify-center text-center animate-in fade-in zoom-in duration-500">
                 <div className="w-24 h-24 bg-white/5 rounded-full flex items-center justify-center mb-6 ring-1 ring-white/10 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                     <svg className="w-10 h-10 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
