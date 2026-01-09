@@ -51,7 +51,7 @@ export default async function Home() {
 
           <div className="pt-8">
             <a
-              href="#gallery"
+              href="#recent_uploads"
               className="group flex items-center gap-2 px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-cyan-400 transition-all duration-200 mx-auto w-fit shadow-lg shadow-white/5"
             >
               <span>See Recent Uploads</span>
@@ -70,7 +70,7 @@ export default async function Home() {
       </section>
 
       {/* SECTION 2: RECENT UPLOADS */}
-      <section id="gallery" className="py-12 px-4 max-w-[1800px] mx-auto bg-neutral-950/50">
+      <section id="recent_uploads" className="py-12 px-4 md:px-12 max-w-[1800px] mx-auto bg-neutral-950/50">
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4">
           <div className="flex items-start gap-4">
@@ -88,7 +88,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[280px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 auto-rows-[280px]">
           {wallpapers.slice(0, 4).map((url, index) => {
             const name = getWallpaperName(url);
             const optimizedSrc = getOptimizedUrl(url, 600);

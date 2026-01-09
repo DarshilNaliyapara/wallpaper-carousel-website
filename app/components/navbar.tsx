@@ -28,21 +28,21 @@ export default function Navbar() {
     <>
       <nav
         className={`
-          fixed top-0 left-0 right-0 z-[100] px-6 transition-all duration-300 ease-in-out border-b border-white/5
+          fixed top-0 left-0 right-0 z-[100] md:px-6 transition-all duration-300 ease-in-out border-b border-white/5
           ${isScrolled 
             ? "bg-[#050505]/80 backdrop-blur-xl border-white/5 py-4 shadow-[0_4px_30px_rgba(0,0,0,0.5)]" 
             : "bg-transparent py-4"
           }
         `}
       >
-        <div className="max-w-[1800px] mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-[1800px] mx-auto px-4 md:px-6 flex items-center justify-between">
           
           <Link href="/" className="flex items-center gap-2 group">
-          <img
-    src="/favicon.ico" /* <-- Make sure this matches your filename in the public folder (e.g., /favicon.ico) */
-    alt="ShilyScape Logo"
-    className="w-12 h-12 rounded-lg object-contain group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300"
-  />
+            <img
+              src="/favicon.ico"
+              alt="ShilyScape Logo"
+              className="w-12 h-12 rounded-lg object-contain group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300"
+            />
             <span className="text-xl font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
               ShilyScape
             </span>

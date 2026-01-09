@@ -37,7 +37,7 @@ export default function Header() {
          <Navbar/>
         </div>
 
-        <div className="flex items-center gap-3 px-12 py-8 overflow-x-auto no-scrollbar mask-gradient">
+        <div className="flex items-center gap-3 py-9 overflow-x-auto no-scrollbar mask-gradient px-5 md:px-12">
           {CATEGORIES.map((cat) => {
       
             const isActive = activeCategory.toLowerCase() === cat.toLowerCase();
