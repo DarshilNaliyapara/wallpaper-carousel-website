@@ -9,14 +9,15 @@ export async function getCategories() {
 
   try {
     const res = await fetch(`${baseUrl}/categories`, {
-      cache: 'no-store' 
+      cache: 'no-store'
     });
 
     if (!res.ok) throw new Error('Failed to fetch categories');
-    const response = await res.json()
-    return response.data.categories;
+    const response = await res.json();
+    let categories = ["all", ...response.data.categories];
+    return categories;
   } catch (error) {
     console.error("Server Action Error:", error);
-    return []; 
+    return [];
   }
 }

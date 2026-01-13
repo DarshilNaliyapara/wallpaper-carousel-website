@@ -32,7 +32,6 @@ export default function WallpaperGrid({
     const fetchWallpapers = async (pageNum: number) => {
         if (loading) return;
         setLoading(true);
-
         try {
             const json = await getWallpapers(pageNum, category);
             if (json) {
